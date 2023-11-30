@@ -1,0 +1,43 @@
+{% block sidebar %} {% load static %}
+<style>
+    .card {
+      box-shadow: 0 16px 48px #e3e7eb;
+    }
+    .ad-item img {
+      width: 300px; /* Adjust the width as needed */
+      height: 200px; /* Adjust the height as needed */
+    }
+</style>
+
+<div class="col-md-4 float-right">
+   
+  <div class="card my-4">
+       
+    <h5 class="card-header">About Us</h5>
+       
+    <div class="card-body">
+           
+      <p class="card-text">
+                This awesome blog is made on top of our favorite full-stack
+        framework,         Django. Follow up the tutorial to learn how we made
+        it!      
+      </p>
+            <a href="" class="btn btn-danger">Know more!</a>    
+    </div>
+     
+  </div>
+
+   
+  <div class="ad-container">
+    {% for ad in ads %}
+    <div class="ad-item">
+      <div class="ofertas" id="ofertasDiv">
+        <h5>Aprovecha estas ofertas</h5>
+      </div>
+      <img src="{{ ad.image.url }}" alt="{{ ad.title }}" />
+      <a href="{{ ad.link }}">Click here to learn more</a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock sidebar %}

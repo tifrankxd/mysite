@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4 mt-3 left top">
+      <div class="card-body">
+        <h1>Sobre Nosotros</h1>
+        <p class="text-muted">
+          Nuestro servicio es ofrecer informacion, sobre temas de programcion.
+          la informacion mas reciente y consejos para que mejores, tu logica de
+          programcion. Conoce más sobre nuestro blog a travez de nuestras redes.
+        </p>
+        <!-- Aquí puedes agregar la información adicional que desees mostrar -->
+        <ul class="d-flex justify-content-between">
+          {% for social_link in social_links %}
+          <li><a href="{{ social_link.link }}">{{ social_link.name }}</a></li>
+          {% endfor %}
+        </ul>
+
+        <p class="text-muted" class="d-flex justify-content-between">
+          Conoce más sobre nuestro blog a travez de nuestras redes.
+        </p>
+      </div>
+    </div>
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
+  </div>
+</div>
+{% endblock content %}

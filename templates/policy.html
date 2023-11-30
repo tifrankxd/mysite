@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block content %}
+<style>
+.description {
+  color: white;
+  .h1 {
+  color: white;
+}
+}</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Politicas</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="video-container">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/CIjLQ4hgVqE?si=nfTK7vLR-DOjZnLV"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <p class="description">
+        Un blog informativo debe tener políticas claras y transparentes que guíen su contenido y funcionamiento. Estas políticas deben ser comunicadas a los lectores y usuarios del blog de forma clara y concisa.
+
+Algunas de las políticas que puede tener un blog informativo incluyen:
+
+Política de contenido: Esta política debe establecer los tipos de contenido que se permiten en el blog, así como los que están prohibidos. Por ejemplo, un blog informativo sobre tecnología puede prohibir el contenido que sea ofensivo, discriminatorio o que contenga información falsa.
+Política de comentarios: Esta política debe establecer las reglas para que los lectores puedan comentar en el blog. Por ejemplo, un blog informativo puede requerir que los comentarios sean relevantes para el tema del artículo, que estén escritos en un tono respetuoso y que no contengan spam o enlaces externos.
+Política de privacidad: Esta política debe informar a los lectores sobre cómo se recopilan, utilizan y comparten sus datos personales.
+Política de derechos de autor: Esta política debe establecer las reglas para el uso del contenido del blog, como las imágenes, el texto y los videos.
+Además de estas políticas generales, un blog informativo puede tener políticas específicas que se apliquen a su contenido o funcionamiento. Por ejemplo, un blog informativo sobre viajes puede tener una política que requiera que los escritores de los artículos hayan visitado personalmente los destinos que describen.
+
+Es importante que las políticas de un blog informativo sean coherentes con los valores y objetivos del blog. Por ejemplo, un blog informativo que se esfuerza por ser objetivo debe tener una política de contenido que prohíba la publicación de opiniones o creencias personales.
+
+A continuación, se presentan algunos consejos para crear políticas para un blog informativo:
+
+Sea claro y conciso: Las políticas deben ser fáciles de entender y seguir.
+Sea específico: Evite las generalidades y proporcione ejemplos concretos de lo que se permite y lo que no.
+Sea transparente: Las políticas deben estar disponibles para los lectores y usuarios del blog de forma clara y concisa.
+Revise periódicamente: Las políticas deben revisarse periódicamente para garantizar que sigan siendo relevantes y adecuadas para el blog.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="ad-container">
+    {% for ad in ads %}
+    <div class="ad-item">
+      <div class="ofertas" id="ofertasDiv">
+        <h5>Aprovecha estas ofertas</h5>
+      </div>
+      <img src="{{ ad.image.url }}" alt="{{ ad.title }}" />
+      <a href="{{ ad.link }}">Click here to learn more</a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
